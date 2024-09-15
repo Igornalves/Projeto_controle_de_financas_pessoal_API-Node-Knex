@@ -5,8 +5,10 @@ import { FastifyReply, FastifyRequest } from 'fastify'
 export function listagemDeDados() {
   return async (request: FastifyRequest, response: FastifyReply) => {
     // const tables = await knex('sqlite_schema').select('*')
-    const tables = await knex('transactions').select('*')
+    const tables = await knex('transactions').where('amount', 1000).select('*')
+
     console.log('listagem de campos feita com sucesso !!!')
+
     response.send(tables)
   }
 }
