@@ -2,13 +2,13 @@
 
 <br>
 
-- [] O usuario pode criar uma nova transacao;
+- [x] O usuario pode criar uma nova transacao;
 
-- [] O usuario deve poder obter um resumo da sua conta 
+- [x] O usuario deve poder obter um resumo da sua conta 
 
-- [] O usuario deve poder lista todas transacoes que ja ocorreram
+- [x] O usuario deve poder lista todas transacoes que ja ocorreram
 
-- [] O usuario deve poder visualizar uma transacao unica
+- [x] O usuario deve poder visualizar uma transacao unica
 
 <br>
 
@@ -16,7 +16,7 @@
 
 <br>
 
-- [] A transacao pode ser do tipo credito que somara ao valor total, ou debito subtraira
+- [x] A transacao pode ser do tipo credito que somara ao valor total, ou debito subtraira
 
 - [] Deve ser possivel identificarmos o usuario entre as requisicoes;
 
