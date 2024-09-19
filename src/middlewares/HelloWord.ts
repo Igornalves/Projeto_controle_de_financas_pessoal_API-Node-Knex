@@ -6,6 +6,14 @@ export function Helloword() {
     // fazendo o test de envio da mensagem para o sistema
     const message = await 'hello word !!!'
 
+    const sessionId = request.cookies.sessionId
+
+    if (!sessionId) {
+      return response.status(401).send({
+        error: 'Nao autorizado !!!!',
+      })
+    }
+
     console.log('message enviada com sucesso')
 
     response.send(message)

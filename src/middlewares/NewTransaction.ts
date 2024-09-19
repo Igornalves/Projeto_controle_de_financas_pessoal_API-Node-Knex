@@ -19,11 +19,22 @@ export function NewTransation() {
       request.body,
     )
 
+    let sessionId = request.cookies.sessionId
+
+    if (!sessionId) {
+      sessionId = randomUUID()
+      response.cookie('sessionId', sessionId, {
+        path: '/',
+        maxAge: 1000 * 60 * 60 * 24 * 7, // 7 days
+      })
+    }
+
     // fazendo uma insercao no banco depois da validacao dos dados
     await knex('transactions').insert({
       id: randomUUID(),
       title,
       amount: type === 'credito' ? amount : amount * -1,
+      session_id: sessionId,
     })
 
     // mandando uma resposta apos ter criado e enviado os dados para o banco de dados

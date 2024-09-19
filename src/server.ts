@@ -2,9 +2,12 @@ import fastify from 'fastify'
 // import { knex } from './database/configsDatabase'
 import { allRoutes } from './routes/all.routes'
 import { env } from './env/intex'
+import cookie from '@fastify/cookie'
 
 // criando uma const que recebe a funcao que permite usar todas as funcionalidades da biblioteca
 const server = fastify()
+
+server.register(cookie)
 
 // Registrando as rotas para que sejam execultadas de forma completa
 server.register(allRoutes, {
