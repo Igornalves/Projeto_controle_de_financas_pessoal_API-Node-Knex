@@ -6,7 +6,7 @@ import { env } from './env/intex'
 // criando uma const que recebe a funcao que permite usar todas as funcionalidades da biblioteca
 const server = fastify()
 
-// Registrando a rota
+// Registrando as rotas para que sejam execultadas de forma completa
 server.register(allRoutes, {
   prefix: '/transactions',
 })

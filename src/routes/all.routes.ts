@@ -9,7 +9,7 @@ import { ResumoDaContaDoUser } from '../middlewares/ResumoDaContaDoUser'
 
 // criando um funcao que ajusta as rotas de forma completa quando for chamanda vai execultar uma funcao
 export async function allRoutes(router: FastifyInstance) {
-  // aqui temos o prefixo da rota e tambem temos a funcao a ser execultada
+  // aqui temos o prefixo da rota e tambem temos a funcao a ser execultada quando for requisitado alguma coisa para rota ou enviado
   router.get('/', Helloword())
 
   router.get('/testConnectionDatabase', listagemDeDados())
