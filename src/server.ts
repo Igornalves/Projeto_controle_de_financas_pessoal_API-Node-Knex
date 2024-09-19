@@ -7,7 +7,9 @@ import { env } from './env/intex'
 const server = fastify()
 
 // Registrando a rota
-server.register(allRoutes)
+server.register(allRoutes, {
+  prefix: '/transactions',
+})
 
 // colocando o server para reconhecer qual porta ela vai coloca a aplicacao para roda e informa atravez de um console.log que já esta rodando o projeto de forma local
 server
