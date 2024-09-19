@@ -20,7 +20,7 @@ export function NewTransation() {
     )
 
     // fazendo uma insercao no banco depois da validacao dos dados
-    await knex('transactions').insert({
+    await knex('transcitons').insert({
       id: randomUUID(),
       title,
       amount: type === 'credito' ? amount : amount * -1,
