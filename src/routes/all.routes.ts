@@ -3,6 +3,8 @@ import { listagemDeDados } from '../middlewares/listegemDeDados'
 import { inserindoDadosNoBanco } from '../middlewares/inserindoDadosNoBanco'
 import { Helloword } from '../middlewares/HelloWord'
 import { NewTransation } from '../middlewares/NewTransaction'
+import { LisntandoDeTransactions } from '../middlewares/ListandoAsTransactions'
+import { BuscaPeloTransactionEspecifica } from '../middlewares/BuscaPeloTransactionEspecifica'
 
 // criando um funcao que ajusta as rotas de forma completa quando for chamanda vai execultar uma funcao
 export async function allRoutes(router: FastifyInstance) {
@@ -14,4 +16,8 @@ export async function allRoutes(router: FastifyInstance) {
   router.get('/testeDeInsercao', inserindoDadosNoBanco())
 
   router.post('/criandoTransaction', NewTransation())
+
+  router.get('/listagemDeTransactions', LisntandoDeTransactions())
+
+  router.get('/transactionsEspecifica/:id', BuscaPeloTransactionEspecifica())
 }

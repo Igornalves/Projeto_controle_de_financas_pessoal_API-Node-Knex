@@ -18,6 +18,6 @@ export function inserindoDadosNoBanco() {
     console.log('dados inseridos com sucesso no banco !!!')
 
     // envidando uma resposta de forma que mostre os dados para o cliente
-    response.send(transaction)
+    response.send({ transaction })
   }
 }

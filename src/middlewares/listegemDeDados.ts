@@ -11,6 +11,6 @@ export function listagemDeDados() {
     console.log('listagem de campos feita com sucesso !!!')
 
     // envidando uma resposta de forma que mostre os dados para o cliente
-    response.send(tables)
+    response.send({ tables })
   }
 }
