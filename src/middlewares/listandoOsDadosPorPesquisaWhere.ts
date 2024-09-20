@@ -2,24 +2,21 @@ import { knex } from '../database/configsDatabase'
 import { FastifyReply, FastifyRequest } from 'fastify'
 
 // criando um rota para testa a conexao com o banco de dados
-export function listandoOsDadosPorPesquisaWhere() {
+export async function listandoOsDadosPorPesquisaWhere(
+  request: FastifyRequest,
+  response: FastifyReply,
+) {
   // criando um retorno onde vai ser async de forma que ele mostre a pesquisa a ser feita na query do banco de dados
-  return async (request: FastifyRequest, response: FastifyReply) => {
-    // const tables = await knex('sqlite_schema').select('*')
+  // const tables = await knex('sqlite_schema').select('*')
 
-    const tables = await knex('transactions').where('amount', 1000).select('*')
+  const { sessionId } = request.cookies
 
-    const sessionId = request.cookies.sessionId
+  const tables = await knex('transactions')
+    .where({ session_id: sessionId, amount: 2000 })
+    .select('*')
 
-    if (!sessionId) {
-      return response.status(401).send({
-        error: 'Nao autorizado !!!!',
-      })
-    }
+  console.log('listagem de campos feita com sucesso !!!')
 
-    console.log('listagem de campos feita com sucesso !!!')
-
-    // envidando uma resposta de forma que mostre os dados para o cliente
-    response.send({ tables })
-  }
+  // envidando uma resposta de forma que mostre os dados para o cliente
+  response.send({ tables })
 }

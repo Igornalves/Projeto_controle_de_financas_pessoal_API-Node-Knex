@@ -1,19 +1,16 @@
 import { FastifyReply, FastifyRequest } from 'fastify'
 import { knex } from '../database/configsDatabase'
 
-export function LisntandoDeTransactions() {
-  return async (request: FastifyRequest, response: FastifyReply) => {
-    // criando um select para ver todas as transacoes do existentes no banco de dados
-    const allTransactions = await knex('transactions').select('*')
+export async function LisntandoDeTransactions(
+  request: FastifyRequest,
+  response: FastifyReply,
+) {
+  const { sessionId } = request.cookies
 
-    const sessionId = request.cookies.sessionId
+  // criando um select para ver todas as transacoes do existentes no banco de dados
+  const allTransactions = await knex('transactions')
+    .where({ session_id: sessionId })
+    .select('*')
 
-    if (!sessionId) {
-      return response.status(401).send({
-        error: 'Nao autorizado !!!!',
-      })
-    }
-
-    response.send({ allTransactions })
-  }
+  response.send({ allTransactions })
 }
