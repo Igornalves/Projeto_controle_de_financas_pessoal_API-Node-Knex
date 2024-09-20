@@ -7,11 +7,15 @@ import { BuscaPeloTransactionEspecifica } from '../middlewares/BuscaPeloTransact
 import { ResumoDaContaDoUser } from '../middlewares/ResumoDaContaDoUser'
 import { listandoOsDadosPorPesquisaWhere } from '../middlewares/listandoOsDadosPorPesquisaWhere'
 import { checkSessionIdUser } from '../middlewares/check-session-id-user'
+import { hookGlobal } from '../hook/hookGlobal'
 
 // Cookies <-> Formas da gente manter contexto entre as requisicoes
 
 // criando um funcao que ajusta as rotas de forma completa quando for chamanda vai execultar uma funcao
 export async function allRoutes(router: FastifyInstance) {
+  // usando um hook global apenas no meu plugin local para incluir para todas as rotas da aplicacao que esta aqui no contexto da funcao
+  router.addHook('preHandler', hookGlobal)
+
   // aqui temos o prefixo da rota e tambem temos a funcao a ser execultada quando for requisitado alguma coisa para rota ou enviado
   router.get('/', Helloword)
 

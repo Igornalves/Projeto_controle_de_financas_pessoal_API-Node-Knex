@@ -9,6 +9,9 @@ const server = fastify()
 
 server.register(cookie)
 
+// usando uma hook global para poder verificar todas as rotas existentes na aplicacao
+// server.addHook('preHandler', hookGlobal)
+
 // Registrando as rotas para que sejam execultadas de forma completa
 server.register(allRoutes, {
   prefix: '/transactions',
