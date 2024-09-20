@@ -8,6 +8,14 @@ export function ResumoDaContaDoUser() {
       .sum('amount', { as: 'amount' })
       .first()
 
+    const sessionId = request.cookies.sessionId
+
+    if (!sessionId) {
+      return response.status(401).send({
+        error: 'Nao autorizado !!!!',
+      })
+    }
+
     response.send({ summary })
   }
 }

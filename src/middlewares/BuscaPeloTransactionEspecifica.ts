@@ -15,6 +15,14 @@ export function BuscaPeloTransactionEspecifica() {
     // fazendo uma procura no banco de dados de forma que ele possa trazer os dados apenas do ID correto que foi criado
     const TransactionSearch = await knex('transactions').where('id', id).first()
 
+    const sessionId = request.cookies.sessionId
+
+    if (!sessionId) {
+      return response.status(401).send({
+        error: 'Nao autorizado !!!!',
+      })
+    }
+
     console.log('Pesquisa da transaction foi feita com sucesso !!!')
 
     // enviando os dados para quando for feita a requisicao seja vista pelo user

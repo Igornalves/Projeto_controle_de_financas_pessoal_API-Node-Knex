@@ -14,6 +14,14 @@ export function inserindoDadosNoBanco() {
       })
       .returning('*')
 
+    const sessionId = request.cookies.sessionId
+
+    if (!sessionId) {
+      return response.status(401).send({
+        error: 'Nao autorizado !!!!',
+      })
+    }
+
     // mostrando no console um bem sucedido para afirmar melhro que os dados sao enviados
     console.log('dados inseridos com sucesso no banco !!!')
 
