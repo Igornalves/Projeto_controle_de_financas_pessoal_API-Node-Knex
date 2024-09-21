@@ -9,6 +9,11 @@ import { listandoOsDadosPorPesquisaWhere } from '../middlewares/listandoOsDadosP
 import { checkSessionIdUser } from '../middlewares/check-session-id-user'
 import { hookGlobal } from '../hook/hookGlobal'
 
+// testes automatizados os principais sao:
+// Unitarios: unidade da sua aplicacao (uma parte isolada da aplicacao)
+// integracao: comunicacao entre duas ou mais unidades
+// e2e - ponta a ponta: simulam um usuario operando na nossa aplicacao
+
 // Cookies <-> Formas da gente manter contexto entre as requisicoes
 
 // criando um funcao que ajusta as rotas de forma completa quando for chamanda vai execultar uma funcao
