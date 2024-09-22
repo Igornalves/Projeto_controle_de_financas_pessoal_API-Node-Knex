@@ -1,15 +1,15 @@
 {
-  "name": "sistema_de_vendas-com-knex.js-apis",
+  "name": "controle_de_financas-com-knex.js-apis",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "lint": "eslint ./ --ext .ts --fix",
     "knex": "tsx ./node_modules/knex/bin/cli.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest"
   },
   "keywords": [],
-  "author": "",
+  "author": "igornalves",
   "license": "ISC",
   "description": "",
   "devDependencies": {
@@ -17,7 +17,8 @@
     "@types/node": "^22.5.4",
     "eslint": "^8.57.0",
     "tsx": "^4.19.1",
-    "typescript": "^5.6.2"
+    "typescript": "^5.6.2",
+    "vitest": "^2.1.1"
   },
   "dependencies": {
     "@fastify/cookie": "^10.0.0",

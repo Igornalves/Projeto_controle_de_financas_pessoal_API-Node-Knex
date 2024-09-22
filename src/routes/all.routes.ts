@@ -14,6 +14,11 @@ import { hookGlobal } from '../hook/hookGlobal'
 // integracao: comunicacao entre duas ou mais unidades
 // e2e - ponta a ponta: simulam um usuario operando na nossa aplicacao
 
+// BackEnd: chamadas http WebSockets
+
+// Piramide de testes: E2E (Nao depende de nunhuma tecnologia nao dependem de arquitetura) teste lentos
+// 2000 testes -> teste E2E =>16 mins
+
 // Cookies <-> Formas da gente manter contexto entre as requisicoes
 
 // criando um funcao que ajusta as rotas de forma completa quando for chamanda vai execultar uma funcao
