@@ -79,4 +79,83 @@ describe('Transactions Routes', () => {
       }),
     ])
   })
+
+  test('fazendo as listagen de uma transaction especifica', async () => {
+    const createTransactionResponse = await request(app.server)
+      .post('/transactions/criandoTransaction')
+      .send({
+        title: 'colocando dinheiro',
+        amount: 2000,
+        type: 'credito',
+      })
+
+    const cookies = createTransactionResponse.get('Set-Cookie')
+
+    if (!cookies) {
+      throw new Error('Cookie não encontrado na resposta')
+    }
+
+    // console.log(cookies)
+
+    const listandoTransactionResponse = await request(app.server)
+      .get('/transactions/listagemDeTransactions')
+      .set('Cookie', cookies)
+      .expect(200)
+
+    const transactionId = listandoTransactionResponse.body.allTransactions[0].id
+
+    const getTransactionResponse = await request(app.server)
+      .get(`/transactions/transactionsEspecifica/${transactionId}`)
+      .set('Cookie', cookies)
+      .expect(200)
+
+    // console.log(getTransactionResponse.body)
+    // console.log(listandoTransactionResponse.body)
+
+    // tirando o array para receber a requisicao
+    expect(getTransactionResponse.body.TransactionSearch).toEqual(
+      expect.objectContaining({
+        title: 'colocando dinheiro',
+        amount: 2000,
+      }),
+    )
+  })
+
+  test('fazendo os resumos das Transactions para o user', async () => {
+    const createTransactionResponse = await request(app.server)
+      .post('/transactions/criandoTransaction')
+      .send({
+        title: 'credito transaction',
+        amount: 2000,
+        type: 'credito',
+      })
+
+    const cookies = createTransactionResponse.get('Set-Cookie')
+
+    if (!cookies) {
+      throw new Error('Cookie não encontrado na resposta')
+    }
+
+    await request(app.server)
+      .post('/transactions/criandoTransaction')
+      .set('Cookie', cookies)
+      .send({
+        title: 'debito transaction',
+        amount: 500,
+        type: 'debito',
+      })
+
+    // console.log(cookies)
+
+    const resumoResponse = await request(app.server)
+      .get('/transactions/resumoDaContaBancaria')
+      .set('Cookie', cookies)
+      .expect(200)
+
+    // console.log(listandoTransactionResponse.body)
+
+    expect(resumoResponse.body.summary).toEqual({
+      amount: 1500,
+    })
+  })
 })
