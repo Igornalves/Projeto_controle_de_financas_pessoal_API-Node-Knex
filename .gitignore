@@ -1,10 +1,12 @@
-# removendo arquivos de dependencias e dados importantes
+# dependencias
 node_modules
 
+# Environment
+.env.test
 .env
 
-src/database/SalesSystem.db
+# Database
+src/database/*.db
 
-.env.test
-
-src/database/testApp.db
+# build
+biuld

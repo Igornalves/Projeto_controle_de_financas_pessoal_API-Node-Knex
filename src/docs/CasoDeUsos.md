@@ -18,9 +18,9 @@
 
 - [x] A transacao pode ser do tipo credito que somara ao valor total, ou debito subtraira
 
-- [] Deve ser possivel identificarmos o usuario entre as requisicoes;
+- [x] Deve ser possivel identificarmos o usuario entre as requisicoes;
 
-- [] O usuario so pode visualizar transacoes o qual ele criou
+- [x] O usuario so pode visualizar transacoes o qual ele criou
 
 <br>
 
