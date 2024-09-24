@@ -17,9 +17,12 @@ import { env } from '../env/intex'
 // exportando as configs para o projeto de forma que possa usar para cria as migrations de forma completa
 export const configs: Knex.Config = {
   client: env.DATABASE_CLIENT,
-  connection: {
-    filename: env.DATABASE_URL,
-  },
+  connection:
+    env.DATABASE_CLIENT === 'sqlite3'
+      ? {
+          filename: env.DATABASE_URL,
+        }
+      : env.DATABASE_URL,
   // opcao que marca para informa ao banco no caso SQLite que nao existes campos padroes nas tabelas criadas no banco de dados do SQLite, pq se nao vai passa um console.log informando para colocar no campo da conexao
   useNullAsDefault: true,
   // ajustando as configs das migrations que vao ser criadas ou modificadas

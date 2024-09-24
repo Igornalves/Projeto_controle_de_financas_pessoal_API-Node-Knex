@@ -16,7 +16,8 @@ const envSchema = z.object({
   NODE_ENV: z.enum(['development', 'test', 'production']).default('production'),
   DATABASE_URL: z.string(),
   DATABASE_CLIENT: z.enum(['sqlite3', 'pg']),
-  PORT: z.number().default(3454),
+  // faz uma conversao para que de fato vc possa colocar um valor e ele ser transformado
+  PORT: z.coerce.number().default(3454),
 })
 
 // faz a validacao direto porem nao mostra o erro de forma direta
