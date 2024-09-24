@@ -7,6 +7,8 @@ import { z } from 'zod'
 // desenvolvendo uma logica que as variaveis de ambiente podem ser rodadas quando for feita os tests ou quando tiver em desenvolvimento
 if (process.env.NODE_ENV === 'test') {
   config({ path: '.env.test' })
+} else {
+  config()
 }
 
 // formato que vai ser recebido os dados na variavel

@@ -6,3 +6,5 @@ node_modules
 src/database/SalesSystem.db
 
 .env.test
+
+src/database/testApp.db
