@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import { test, beforeAll, afterAll, describe, expect } from 'vitest'
 // import { execSync } from 'node:child_process'
+=======
+import { test, beforeAll, afterAll, describe, expect, beforeEach } from 'vitest'
+import { execSync } from 'node:child_process'
+>>>>>>> 40337d0eb4894e00fb39237fa07631520c6b9148
 import request from 'supertest'
 import { app } from '../src/app'
 
@@ -27,10 +32,17 @@ describe('Transactions Routes', () => {
     await app.close()
   })
 
+<<<<<<< HEAD
   // beforeEach(async () => {
   //   execSync('npm run knex migrate:rollback --all')
   //   execSync('npm run knex migrate:latest')
   // })
+=======
+  beforeEach(async () => {
+    execSync('npm run knex migrate:rollback --all')
+    execSync('npm run knex migrate:latest')
+  })
+>>>>>>> 40337d0eb4894e00fb39237fa07631520c6b9148
 
   // teste a ser criado para ver se a rota post esta funcionando de forma completa
   test('o usuario conseguir cria uma nova transacao', async () => {
