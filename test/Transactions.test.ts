@@ -1,4 +1,5 @@
-import { test, beforeAll, afterAll, describe, expect } from 'vitest'
+import { test, beforeAll, afterAll, describe, expect, beforeEach } from 'vitest'
+import { execSync } from 'node:child_process'
 import request from 'supertest'
 import { app } from '../src/app'
 
@@ -24,6 +25,11 @@ describe('Transactions Routes', () => {
   // Isso é importante para garantir que a aplicação seja corretamente finalizada, liberando quaisquer recursos ou conexões de forma segura.
   afterAll(async () => {
     await app.close()
+  })
+
+  beforeEach(async () => {
+    execSync('npm run knex migrate:rollback --all')
+    execSync('npm run knex migrate:latest')
   })
 
   // teste a ser criado para ver se a rota post esta funcionando de forma completa

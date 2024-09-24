@@ -1,6 +1,5 @@
 // ajustando a importacao da biblioteca knex e a interface Knex para usar nas configs
 import { knex as SetupKnex, Knex } from 'knex'
-import 'dotenv/config'
 
 // importando os tratamento de dados enviados no processo
 import { env } from '../env/intex'
