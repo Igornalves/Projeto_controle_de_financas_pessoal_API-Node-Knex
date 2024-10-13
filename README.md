@@ -142,3 +142,8 @@ Siga os passos abaixo para configurar e rodar o projeto em sua máquina:
     <br>
 
     - Utilize o Postman para testar as requisições como GET, POST, PUT e DELETE.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+
