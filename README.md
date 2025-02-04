@@ -1,16 +1,16 @@
-# Projeto Sistema de vendas API rest
+# REST API Sales System Project
 
-projeto voltado para aprendizado em desenvolvimento de API rest com a utilizacao de tecnologias do mercado de node.js, bibliotecas terceiras e bancos de dados com conexao com o sistema.
+Project focused on learning about REST API development using technologies from the Node.js market, third-party libraries and databases connected to the system.
 
-## Índice
+## Index
 
-- [Tecnologias e Ferramentas Utilizadas](#tecnologias-e-ferramentas-utilizadas)
-- [Estrutura do Projeto](#estrutura-do-projeto)
-- [Pré-requisitos](#pré-requisitos)
-- [Instalação e Configuração](#instalação-e-configuração)
-- [Execução do Projeto](#execução-do-projeto)
+- [Technologies and Tools Used](#technologies-and-tools-used)
+- [Project Structure](#project-structure)
+- [Prerequisites](#prerequisites)
+- [Installation and Configuration](#installation-and-configuration)
+- [Project Execution](#project-execution)
 
-## Tecnologias e Ferramentas Utilizadas
+## Technologies and Tools Used
 
 <br>
 <div style="display: inline_block" align="center">
@@ -25,24 +25,24 @@ projeto voltado para aprendizado em desenvolvimento de API rest com a utilizacao
 </div>
 <br>
 
-- Node.js 
+- Node.js
 - TypeScript
 - Fastify
 - Vitest
 - SQLite
 - Postman
 
-## Estrutura do Projeto
- 
-Toda a sua estrutura de projeto e suas rota forma documentadas na seguinte rota da aplicacao quando vc rodar a Aplicacao de forma local 
+## Project Structure
+
+Your entire project structure and routes are documented in the following application route when you run the Application in a local
 
 ```bash
 http://localhost:3333/api-docs/
 ```
 
-## Pré-requisitos
+## Prerequisites
 
-Algums Pré-requisitos importantes para vc poder rodar o projeto na sua maquina local seria vc ter instalado as seguintes ferramentas que sao:
+Some important prerequisites for you to be able to run the project on your local machine would be to have the following tools installed:
 
 <br>
 <div style="display: inline_block" align="center">
@@ -55,11 +55,11 @@ Algums Pré-requisitos importantes para vc poder rodar o projeto na sua maquina 
 </div>
 <br>
 
-- **Node.js:** Versão 12 ou superior.
-- **NPM** ou **Yarn:** Gerenciadores de pacotes.
-- **PostgreSQL ou Outros:** Banco de dados relacional.
+- **Node.js:** Version 12 or higher.
+- **NPM** or **Yarn:** Package managers.
+- **PostgreSQL or Others:** Relational database.
 
-#### IDE (Ambiente de Desenvolvimento Integrado):
+#### IDE (Integrated Development Environment):
 
 <br>
 <div style="display: inline_block" align="center">
@@ -70,80 +70,77 @@ Algums Pré-requisitos importantes para vc poder rodar o projeto na sua maquina 
 </div>
 <br>
 
-- **VS Code** (com extensões para Node.js e JavaScript).
+- **VS Code** (with extensions for Node.js and JavaScript).
 - **WebStorm**.
 
-## Instalação e Configuração
+## Installation and Configuration
 
-Siga os passos abaixo para configurar e rodar o projeto em sua máquina:
+Follow the steps below to configure and run the project on your machine:
 
-1. **Clone o repositório**:
-    ```bash
-    git clone https://github.com/seu-repositorio/sistema-gerenciamento-escola.git
-    ```
+1. **Clone the repository**:
+```bash
+git clone https://github.com/seu-repositorio/sistema-gerenciamento-escola.git
+```
 
-2. **Instalação das dependências:**
+2. **Installing the dependencies:**
 
-    - Se estiver usando NPM:
+- If you are using NPM:
 
-        ```bash
-        npm install
-        ```
-    - Se estiver usando Yarn: 
-        ```bash
-        yarn install
-        ```
-3. **Configuração do banco de dados:**
-    - Crie um banco de dados PostgreSQL.
-    -Configure as credenciais de acesso ao banco no arquivo .env (se utilizando dotenv):
+```bash
+npm install
+```
+- If you are using Yarn:
+```bash
+yarn install
+```
+3. **Database configuration:**
+- Create a PostgreSQL database. -Set the database access credentials in the .env file (if using dotenv):
 
-        ```javascript
-            NODE_ENV=development
-            DATABASE_URL= String
-            DATABASE_CLIENTE= String
-            PORT= Number
-        ```
+```javascript
+NODE_ENV=development
+DATABASE_URL= String
+DATABASE_CLIENT= String
+PORT= Number
+```
 
+## Project Execution
 
-## Execução do Projeto
+1. **Running the application:**
 
-1. **Rodando a aplicação:**
+- If using NPM:
 
-    - Se estiver usando NPM:
+```bash
+npm run dev
+```
+- If using NPM:
 
-        ```bash
-            npm run dev
-        ```
-    - Se estiver usando NPM:
+```bash
+yarn dev
+```
+2. **Accessing the application:**
 
-        ```bash
-            yarn dev
-        ```
-2. **Acessando a aplicação:**
+<br>
+<div style="display: inline_block" align="center">
 
-    <br>
-    <div style="display: inline_block" align="center">
+<img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/chrome/chrome-original.svg" />
 
-    <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/chrome/chrome-original.svg" />
+</div>
+<br>
 
-    </div>
-    <br>
+- The application will be running on ```http://localhost:8080``` by default, NOTE:. check if there is any change in the default port to be run in the application.
 
-    - A aplicação estará rodando em ```http://localhost:8080``` por padrão, OBS :. veeja see na aplicacao nao ah alguma alteracao de porta padrao a ser rodada na aplicacao.
+3. **Testing the API routes:**
 
-3. **Testando as rotas da API:**
+<br>
+<div style="display: inline_block" align="center">
 
-    <br>
-    <div style="display: inline_block" align="center">
+<img width="100" src="https://skillicons.dev/icons?i=postman">
 
-    <img width="100" src="https://skillicons.dev/icons?i=postman">
+</div>
+<br>
 
-    </div>
-    <br>
-
-    - Utilize o Postman para testar as requisições como GET, POST, PUT e DELETE.
+- Use Postman to test requests such as GET, POST, PUT and DELETE.
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
-
